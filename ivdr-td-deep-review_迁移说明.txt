@@ -1,0 +1,32 @@
+ivdr-td-deep-review 技能迁移说明
+================================
+
+【这是什么】
+一个豆包办公技能，用于 IVDR/CE 体外诊断试剂技术文档包的深度合规审核
+（全文档精读、跨文档一致性核查、问题按阻断/高/中/低/建议分级、交付 Word 中文审核报告）。
+
+【迁移步骤】
+1. 在新电脑上找到豆包工作区的用户技能目录 .user_skills，路径形如：
+   C:\Users\<新用户名>\AppData\Roaming\LarkShell\aha\users\<用户ID>\doubao\.doubao\agent_mode\workspace\.user_skills
+   （可在新电脑的会话里问我"用户技能目录在哪"，我可以帮你定位）
+2. 把本压缩包中的 ivdr-td-deep-review 整个文件夹复制到上述 .user_skills 目录下，
+   文件夹名必须保持 ivdr-td-deep-review 不变。
+3. 新会话中技能即被识别；旧会话需开新会话或重试后生效。
+
+【新电脑环境核实（重要）】
+技能中"第 2 步：读取全部文档"记录的环境要点是针对原电脑的，换机后请先核实：
+- .doc 老格式读取：原电脑无 LibreOffice，用 Word COM；新电脑若有 LibreOffice 也可直接转换
+- python 写中文文件被加密（%TSD-Header/.IPGSD）：该问题可能只在原电脑存在
+- 网络共享路径 MAX_PATH 260 限制、WPS 加密流：按新电脑实际情况处理
+发现环境不同时，直接按新环境执行并考虑更新本技能。
+
+【技能结构】
+ivdr-td-deep-review/
+├── SKILL.md                          # 七步审核流程与使用说明
+└── references/
+    ├── ivdr-annex2-checklist.md      # Part A-M 审核要点、IVDR 条款、标准、一致性字段、分级定义
+    └── report-structure.md           # Word 九章报告模板与交付检查清单
+
+【注意事项】
+- 不要在技能文件夹内添加额外说明文件（保持精简，只保留 SKILL.md 和 references/）
+- 账号级偏好（审核模式、交付规范等四条）已存于豆包账号记忆，换电脑登录同一账号自动生效，无需迁移
